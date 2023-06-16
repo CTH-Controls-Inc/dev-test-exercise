@@ -4,22 +4,22 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
-```
-yarn && yarn next dev
-```
+`yarn && yarn next dev`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result, using the `login` button go to the login page. 
-All validation takes place on the back end, the errors are communicated via `key` and `error` values. On the front end if there are any errors the input with the error becomes focused and an error message is displayed. 
-If the user sends in a valid email and any password its 'valid', to test what an 'invalid' error would look like you can use email `fail@test.co` and any password. 
 
-I created this so it would be easy to scale. Expanding the forms would be trivial as would be adding more validation. 
+On the front end, all validation takes place on the server side, and errors are communicated via key-value pairs. If there are any errors, the corresponding input field is focused, and an error message is displayed. For testing purposes, entering a valid email with any password will result in a "valid" response. To see an "invalid" error, use the email fail@test.co with any password.
 
-
+The project is designed to be easily scalable. Expanding the forms and adding more validation can be done with ease.
 
 ## API
-To use the API use `POST ://localhost:3000/api/log-in` in PostMan with the body `{"email": string, "password": string}` to test the endpoint. 
+Next.js provides server-side rendering and endpoint functionality. Most of the logic is implemented in an endpoint. To use the API, send a POST request to https://localhost:3000/api/log-in with the request body as {"email": string, "password": string}. You can test the endpoint using tools like Postman.
 
 
-## Deploy on Vercel
+## Deployment
+The project is deployed on Vercel. You can access it at the following URL:
 
+    Application: https://user-auth-nextjs.vercel.app/
+    Login: https://user-auth-nextjs.vercel.app/log-in
 
+Feel free to explore and test the application!
