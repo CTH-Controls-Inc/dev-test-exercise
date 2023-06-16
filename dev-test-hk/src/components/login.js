@@ -16,6 +16,7 @@ const LoginForm = () => {
     setSnackOpen(false);
   };
 
+  // custom email validation regex, example format -> abc123@provider.com
   const validateEmail = (value) => {
     if (!value) {
       return "Email is required.";
@@ -27,6 +28,7 @@ const LoginForm = () => {
     return "";
   };
 
+  // basic password validation, at least 1 character required
   const validatePassword = (value) => {
     if (!value) {
       return "Password is required";
@@ -34,6 +36,8 @@ const LoginForm = () => {
     return "";
   };
 
+  // reads input value from email field, gets validation result,
+  // then displays appropriate message
   const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);
@@ -44,6 +48,7 @@ const LoginForm = () => {
     }));
   };
 
+  // same as above handler, but for password
   const handlePasswordChange = (e) => {
     const value = e.target.value;
     setPassword(value);
@@ -57,7 +62,7 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Perform final validation
+    // required as failsafe, even though login button will be disabled
     const emailError = validateEmail(email);
     const passwordError = validatePassword(password);
 
@@ -65,6 +70,7 @@ const LoginForm = () => {
       return;
     }
 
+    // show a snackbar that user has successfully logged in
     setSnackOpen(true);
   };
 
