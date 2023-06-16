@@ -1,0 +1,11 @@
+.formField {
+    width: 400px;
+    max-width: 90vw;
+    margin-bottom: 1rem;
+}
+
+.loginBtn {
+    width: 400px;
+    max-width: 90vw;
+    height: 40px;
+}

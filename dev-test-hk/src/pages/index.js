@@ -1,6 +1,5 @@
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 import styles from "@/styles/Home.module.css";
+import { ThemeProvider, createTheme, createColor } from "@mui/material/styles";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import LoginForm from "../components/login";
@@ -33,7 +32,6 @@ const darkTheme = createTheme({
 export default function Home() {
   return (
     <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
       <Head>
         <title>Dev Test Harsh K</title>
         <meta name="description" content="dev test for CTH Controls" />

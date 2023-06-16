@@ -1,12 +1,19 @@
+import styles from "@/styles/Login.module.css";
+import { Alert, Button, TextField } from "@mui/material";
+import Snackbar from "@mui/material/Snackbar";
 import { useState } from "react";
-import { TextField, Button } from "@mui/material";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const [open, setOpen] = useState(false);
 
   const isFormValid = email && password && !errors.email && !errors.password;
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const validateEmail = (value) => {
     if (!value) {
@@ -14,7 +21,7 @@ const LoginForm = () => {
     }
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (!emailRegex.test(value)) {
-      return "format: example@example.com";
+      return "Please enter email in format: example@example.com";
     }
     return "";
   };
@@ -22,9 +29,6 @@ const LoginForm = () => {
   const validatePassword = (value) => {
     if (!value) {
       return "Password is required";
-    }
-    if (value.length < 4) {
-      return "Password should be at least 4 characters long";
     }
     return "";
   };
@@ -65,8 +69,7 @@ const LoginForm = () => {
       return;
     }
 
-    // Proceed with login logic
-    console.log("Login successful");
+    setOpen(true);
   };
 
   return (
@@ -77,6 +80,7 @@ const LoginForm = () => {
         onChange={handleEmailChange}
         error={!!errors.email}
         helperText={errors.email}
+        className={styles.formField}
       />
       <br />
       <TextField
@@ -86,11 +90,21 @@ const LoginForm = () => {
         onChange={handlePasswordChange}
         error={!!errors.password}
         helperText={errors.password}
+        className={styles.formField}
       />
       <br />
-      <Button type="submit" variant="contained" color="primary" disabled={!isFormValid}>
+      <Button
+        type="submit"
+        variant="outlined"
+        disabled={!isFormValid}
+        className={styles.loginBtn}>
         Login
       </Button>
+      <Snackbar open={open} anchorOrigin={{ vertical: "bottom", horizontal: "center" }} autoHideDuration={2500}>
+        <Alert onClose={handleClose} severity="success">
+          Logged in as {email}
+        </Alert>
+      </Snackbar>
     </form>
   );
 };
