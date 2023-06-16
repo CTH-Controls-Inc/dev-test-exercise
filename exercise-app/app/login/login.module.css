@@ -1,0 +1,83 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: #dedede;
+  color: #303030;
+}
+
+.form {
+  width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+.form .title {
+  font-size: 3rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  width: 100%;
+}
+
+.inputContainer .label {
+  font-size: 1rem;
+  padding: 0 0.75rem;
+}
+
+.inputContainer .input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 2px solid #3c3c3c;
+  font-size: 1.25rem;
+  background: #f1f1f1;
+  color: inherit;
+}
+
+.inputContainer .input:focus {
+  outline: 2px solid #001694;
+}
+
+.inputContainer .input.error {
+  border: 2px solid red;
+}
+
+.inputContainer .errorText {
+  font-size: 0.75rem;
+  color: red;
+  padding: 0 0.75rem;
+}
+
+.inputContainer .errorText.hidden {
+  opacity: 0;
+}
+
+.submit {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.5rem;
+  background: #001694;
+  color: #fff;
+  cursor: pointer;
+  transition: background 100ms;
+}
+
+.submit:hover {
+  background: #0011c7;
+}
+
+.submit:active {
+  background: #000e9e;
+}
