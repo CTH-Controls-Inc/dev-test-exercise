@@ -1,7 +1,7 @@
 "use client"; // This is a client component
 
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 import validator from 'validator';
 import React, { useState, useEffect } from 'react';
 
@@ -46,4 +46,4 @@ const validateEmail = (e) => {
   )
 }
 
-export default Login
+export default Login;

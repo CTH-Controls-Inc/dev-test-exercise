@@ -1,6 +1,5 @@
-
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 import  Login from './components/login';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,4 +18,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Home;
