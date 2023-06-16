@@ -1,4 +1,3 @@
-import styles from "@/styles/Login.module.css";
 import { Alert, Button, TextField } from "@mui/material";
 import Snackbar from "@mui/material/Snackbar";
 import { useState } from "react";
@@ -82,7 +81,7 @@ const LoginForm = () => {
         onChange={handleEmailChange}
         error={!!errors.email}
         helperText={errors.email}
-        className={styles.formField}
+        style={styles.formField}
       />
       <br />
       <TextField
@@ -92,16 +91,16 @@ const LoginForm = () => {
         onChange={handlePasswordChange}
         error={!!errors.password}
         helperText={errors.password}
-        className={styles.formField}
+        style={styles.formField}
       />
       <br />
-      <Button type="submit" variant="outlined" disabled={!isFormValid} className={styles.loginBtn}>
+      <Button type="submit" variant="outlined" disabled={!isFormValid} style={styles.loginBtn}>
         Login
       </Button>
       <Snackbar
         open={snackOpen}
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        autoHideDuration={2000}
+        autoHideDuration={2500}
         onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           Logged in as {email}
@@ -112,3 +111,16 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
+const styles = {
+  formField: {
+    width: "400px",
+    maxWidth: "90vw",
+    marginBottom: "1rem",
+  },
+  loginBtn: {
+    width: "400px",
+    maxWidth: "90vw",
+    height: "40px",
+  },
+};
