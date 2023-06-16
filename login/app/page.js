@@ -1,7 +1,7 @@
 'use client'
 import { useRef, useState } from "react";
 
-export default function Home() {
+export default function Login() {
   const [emailWarn,setEmailWarn]=useState('');
   const [passwordWarn,setPasswordWarn]=useState('');
   const emailInput=useRef();
