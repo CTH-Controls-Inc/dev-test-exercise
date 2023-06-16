@@ -1,12 +1,39 @@
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 import styles from "@/styles/Home.module.css";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import LoginForm from "../components/login";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+  typography: {
+    fontFamily: [
+      "ui - monospace",
+      "Menlo",
+      "Monaco",
+      "Cascadia Mono",
+      "Segoe UI Mono",
+      "Roboto Mono",
+      "Oxygen Mono",
+      "Ubuntu Monospace",
+      "Source Code Pro",
+      "Fira Mono",
+      "Droid Sans Mono",
+      "Courier New",
+      "monospace",
+    ],
+  },
+});
+
 export default function Home() {
   return (
-    <>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       <Head>
         <title>Dev Test Harsh K</title>
         <meta name="description" content="dev test for CTH Controls" />
@@ -22,8 +49,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className={styles.center}>test</div>
+        <div className={styles.center}>
+          <LoginForm />
+        </div>
       </main>
-    </>
+    </ThemeProvider>
   );
 }
