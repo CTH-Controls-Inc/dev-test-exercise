@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Login from './components/login'
 
 export default function Home() {
   return (
@@ -30,24 +31,7 @@ export default function Home() {
 
       {/* Login Dialogue  */}
 
-      <div className={styles.center}>
-        <div className={styles.login}>
-          <h2 className={styles.logintitle}>Login</h2>
-          <form>
-            <div className={styles.loginfield}>
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" />
-            </div>
-            <div className={styles.loginfield}>
-              <label htmlFor="password">Password</label>
-              <input type="password" id="password" name="password" />
-            </div>
-            <div className={styles.loginbuttoncontainer}>
-              <button className={styles.loginbutton}type="submit">Login</button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <Login />
 
       <div className={styles.grid}>
         <a
