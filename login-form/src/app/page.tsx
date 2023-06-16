@@ -1,4 +1,3 @@
-"use client"; // This is a client component 👈🏽
 
 import type { NextPage } from 'next'
 import Head from 'next/head'
