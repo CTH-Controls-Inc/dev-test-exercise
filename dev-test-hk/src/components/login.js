@@ -7,12 +7,13 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
-  const [open, setOpen] = useState(false);
+  const [snackOpen, setSnackOpen] = useState(false);
 
+  // initialized form state before user starts typing
   const isFormValid = email && password && !errors.email && !errors.password;
 
   const handleClose = () => {
-    setOpen(false);
+    setSnackOpen(false);
   };
 
   const validateEmail = (value) => {
@@ -60,16 +61,11 @@ const LoginForm = () => {
     const emailError = validateEmail(email);
     const passwordError = validatePassword(password);
 
-    setErrors({
-      email: emailError,
-      password: passwordError,
-    });
-
     if (emailError || passwordError) {
       return;
     }
 
-    setOpen(true);
+    setSnackOpen(true);
   };
 
   return (
@@ -93,14 +89,14 @@ const LoginForm = () => {
         className={styles.formField}
       />
       <br />
-      <Button
-        type="submit"
-        variant="outlined"
-        disabled={!isFormValid}
-        className={styles.loginBtn}>
+      <Button type="submit" variant="outlined" disabled={!isFormValid} className={styles.loginBtn}>
         Login
       </Button>
-      <Snackbar open={open} anchorOrigin={{ vertical: "bottom", horizontal: "center" }} autoHideDuration={2500}>
+      <Snackbar
+        open={snackOpen}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        autoHideDuration={2000}
+        onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           Logged in as {email}
         </Alert>
