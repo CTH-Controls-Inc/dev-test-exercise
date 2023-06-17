@@ -1,11 +1,11 @@
 FROM node:18
 
-WORKDIR /exercise
+WORKDIR /exercise/login
 
 COPY . .
 
-RUN npm install
+RUN yarn install
 
 EXPOSE 3000
 
-CMD ["npm", "run dev"]
+CMD ["yarn", "dev"]
