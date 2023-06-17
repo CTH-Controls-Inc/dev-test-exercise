@@ -38,7 +38,8 @@ export default function Home() {
 							setPassword(e.target.value)
 						}}
 					/>
-          {error && <p className={styles.error}>{error}</p>}
+          <button className={styles['login-button']}>Login</button>
+          <p className={error?styles['error-show']:styles['error-hide']}>Email is not Valid</p>
 				</div>
     </main>
   )

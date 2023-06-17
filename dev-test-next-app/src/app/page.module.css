@@ -22,3 +22,31 @@
 .login-input:focus {
 	outline: 1px solid gray;
 }
+.error-input {
+	border: 1px solid red;
+	border-radius: 5px;
+	height: 30px;
+}
+.error-input:focus {
+	outline: 1px solid darkred;
+}
+.error-show {
+  visibility: visible;
+	color: red;
+	font-size: 12px;
+	font-weight: bold;
+}
+.error-hide {
+  visibility: hidden;
+  color: red;
+	font-size: 12px;
+	font-weight: bold;
+}
+.login-button{
+  height: 30px;
+  font-weight:bold;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  background-color: white;
+  cursor: pointer;
+}
