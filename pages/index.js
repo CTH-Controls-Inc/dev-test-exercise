@@ -39,6 +39,7 @@ function LogIn() {
                     <input
                         type="password"
                         name="pass"
+                        className={ errors.password ? 'has-error' : ''}
                         placeholder="password"
                         {...register('password', { required: true })}
                     />

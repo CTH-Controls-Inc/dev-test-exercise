@@ -15,6 +15,12 @@ input[type="password"] {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+input[type="text"].has-error,
+input[type="password"].has-error {
+    height: 25px;
+    border-color: red;
+}
+
 input[type="submit"] {
     margin-top: 10px;
     cursor: pointer;
