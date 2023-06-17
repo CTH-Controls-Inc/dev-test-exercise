@@ -1,11 +1,15 @@
 export default function useInputValidation(
-  type: string,
+  name: string,
   value: string,
   pattern?: RegExp
 ) {
   let validate = false;
-  if (type === "email") {
+  if (name === "email") {
     if (pattern && pattern.test(value)) {
+      validate = true;
+    }
+  } else if (name === "password") {
+    if (value?.length >= 8) {
       validate = true;
     }
   }

@@ -15,16 +15,24 @@ main {
   width: 20rem;
   height: 20rem;
   border: 1px solid #ccc;
-  border-radius: 1rem;
+  border-radius: 0.51rem;
 }
 
-input {
-  width: 100%;
-  margin: 0.25rem 0;
-  height: 1.5rem;
-}
+input,
 button {
   width: 100%;
-  height: 1.5rem;
+  margin: 0.05rem 0;
+  height: 2rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+.input__container {
+  margin-bottom: 1.5rem;
+}
+button {
   background: #176dcf;
+  color: #fff;
+}
+input {
+  margin-top: 0.5rem;
 }

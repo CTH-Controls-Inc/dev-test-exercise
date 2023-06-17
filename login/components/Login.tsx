@@ -7,7 +7,8 @@ export default function Login() {
   const [inputs, setInputs] = useState<InputObject>({}),
     [errors, setErrors] = useState<InputObject>({}),
     emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-    validateEmail = useInputValidation("email", inputs?.email, emailPattern);
+    validateEmail = useInputValidation("email", inputs?.email, emailPattern),
+    validatePassword = useInputValidation("password", inputs?.password);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>): void {
     const { name, value } = event.target;
@@ -18,8 +19,13 @@ export default function Login() {
     event.preventDefault();
     if (!validateEmail) {
       setErrors((values) => ({ ...values, email: "Invalid email entered" }));
-      console.log("Error");
+    } else if (!validatePassword) {
+      setErrors((values) => ({
+        ...values,
+        password: "Password should be more than 8 characters",
+      }));
     } else {
+      setErrors({});
       alert("Login successful");
     }
   }
@@ -38,7 +44,7 @@ export default function Login() {
               error={errors?.email || ""}
               onChange={handleChange}
               autoComplete="on"
-              className={`email ${errors?.email && "input__error"}`}
+              className={`login__email ${errors.email ? "input__error" : ""}`}
             />
 
             <Inputs
@@ -51,7 +57,9 @@ export default function Login() {
               onChange={handleChange}
               autoComplete="off"
               required="true"
-              className="email "
+              className={`login__password ${
+                errors.password ? "input__error" : ""
+              }`}
             />
 
             <div className="submit__btn">
