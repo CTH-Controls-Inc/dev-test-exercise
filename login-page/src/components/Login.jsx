@@ -1,7 +1,6 @@
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
-import { lightBlue } from '@mui/material/colors';
 import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -9,7 +8,7 @@ import Button from '@mui/material/Button';
 function Login() {
   const paperstyle = {
     padding: 20,
-    height: '70vh',
+    height: '43vh',
     width: 280,
     margin: '20px auto',
   };
@@ -44,7 +43,13 @@ function Login() {
             />
           </Grid>
           <Grid item>
-            <Button type='submit' color='primary' variant='contained' fullWidth>
+            <Button
+              type='submit'
+              color='primary'
+              variant='contained'
+              style={{ marginTop: '10px' }}
+              fullWidth
+            >
               Sign In
             </Button>
           </Grid>
