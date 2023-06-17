@@ -1,14 +1,13 @@
-"use client";
-import Image from 'next/image'
-import styles from './page.module.css'
-import { useState } from 'react'
+'use client';
+import Image from 'next/image';
+import styles from './page.module.css';
+import { useState } from 'react';
 export default function Home() {
-  
-  const [email, setEmail] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState(false);
 
-  //Handle Email Checking and Validation  
+	//Handle Email Checking and Validation
 	const handleLogin = (e) => {
 		let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		setEmail(e.target.value);
@@ -18,29 +17,31 @@ export default function Home() {
 			setError(false);
 		}
 	};
-  return (
-    <main className={styles.main}>
-      <div className={styles['login-container']}>
-					<h1>Login</h1>
-					<input
-						className={error ? styles['error-input'] : styles['login-input']}
-						type='email'
-						placeholder='E-mail'
-            onChange={(e) => {
-							handleLogin(e);
-						}}
-					/>
-					<input
-						className={styles['login-input']}
-						type='password'
-						placeholder='Password'
-            onChange={(e) => {
-							setPassword(e.target.value)
-						}}
-					/>
-          <button className={styles['login-button']}>Login</button>
-          <p className={error?styles['error-show']:styles['error-hide']}>Email is not Valid</p>
-				</div>
-    </main>
-  )
+	return (
+		<main className={styles.main}>
+			<div className={styles['login-container']}>
+				<h1>Login</h1>
+				<input
+					className={error ? styles['error-input'] : styles['login-input']}
+					type='email'
+					placeholder='E-mail'
+					onChange={(e) => {
+						handleLogin(e);
+					}}
+				/>
+				<input
+					className={styles['login-input']}
+					type='password'
+					placeholder='Password'
+					onChange={(e) => {
+						setPassword(e.target.value);
+					}}
+				/>
+				<button className={styles['login-button']}>Login</button>
+				<p className={error ? styles['error-show'] : styles['error-hide']}>
+					Email is not Valid
+				</p>
+			</div>
+		</main>
+	);
 }
