@@ -16,7 +16,6 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Login clicked');
     setIsLoginSuccessModalOpen(true);
   };
 
@@ -30,7 +29,7 @@ const LoginPage = () => {
     setIsEmailError(!validateEmail(value));
   };
 
-  const validateEmail = (value) => {
+  const validateEmail = (value) => { // regex to verify correct email address format
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(value);
   };
