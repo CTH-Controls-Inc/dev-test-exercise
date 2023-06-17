@@ -4,6 +4,7 @@ import Avatar from '@mui/material/Avatar';
 import { lightBlue } from '@mui/material/colors';
 import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 function Login() {
   const paperstyle = {
@@ -17,7 +18,7 @@ function Login() {
     <Grid>
       <Paper elevation={3} style={paperstyle}>
         <Grid align='center'>
-          <Avatar sx={{ bgcolor: lightBlue[500] }}>
+          <Avatar sx={{ bgcolor: '#1976D2' }}>
             <LoginTwoToneIcon />
           </Avatar>
           <h2>Sign In</h2>
@@ -41,6 +42,11 @@ function Login() {
               type='password'
               fullWidth
             />
+          </Grid>
+          <Grid item>
+            <Button type='submit' color='primary' variant='contained' fullWidth>
+              Sign In
+            </Button>
           </Grid>
         </Grid>
       </Paper>
