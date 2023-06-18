@@ -95,18 +95,21 @@ const LoginForm = () => {
         <div className="flex w-full gap-5 md:gap-2 items-center justify-center text-xs sm:text-sm mt-10">
           <button
             type="submit"
-            className="flex-1 text-white py-3 rounded-lg bg-purple-500 hover:scale-105 ease-in-out"
+            disabled={Object.keys(errors).length > 0}
+            className={`flex-1 text-white py-3 rounded-lg ${
+              Object.keys(errors).length === 0
+                ? "bg-purple-500 hover:scale-105 ease-in-out"
+                : "bg-purple-500/50"
+            }`}
           >
-            Submit
+            Login
           </button>
-          <button
-            type="button"
-            className="flex-1 py-3 text-purple-500 font-bold hover:scale-105 ease-in-out"
-          >
+          <button className="flex-1 py-3 text-purple-500 font-bold hover:scale-105 ease-in-out">
             Cancel
           </button>
         </div>
       </section>
+
       {/* Image */}
       <section className="hidden md:block flex-1 relative overflow-hidden">
         <Image
