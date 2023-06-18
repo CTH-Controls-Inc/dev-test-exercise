@@ -19,3 +19,11 @@ While we are not monitoring the time, the exercise should take you less than an 
 1. Fork this repository to a public one on your account.
 2. Complete the exercise.
 3. When you're done, submit your fork as a pull request back to this repository.
+
+## How to run using docker
+
+Just using Dockerfile Command:
+1. docker build -t login-app .
+2. docker run —name login-app -p 3000:3000 -it login-app
+When using dockercompose:
+1. docker compose up -d —build webservice
