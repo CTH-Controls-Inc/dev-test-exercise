@@ -1,21 +1,44 @@
-# Dev Test
+# Overview
 
-## Exercise
+This is a web application that simulates a <b>Login page</b>, allowing users to enter their credentials & interact with the form.<br/>The user input is validated on the client side in real time, providing dynamic feedback about input field error states to the user.
 
-Create a basic web application using next.js + React to display a login page. The login page should include fields for email and password. The page doesn't need to have actual functionality, but it should have the following feature:
+# Tech Stack
 
-- When the user enters a value that is not a valid email address in the email field, the box should have a red border and display a notification informing the user that the entered value is not a valid email.
+- [Next.js 13](https://nextjs.org/docs): A React framework for building server-side rendered (SSR) fullstack web applications.
+- [React Hook Form](https://react-hook-form.com/get-started): A lightweight library in React that simplifies form validation and management using hooks, reducing re-renders and providing a customizable and efficient approach to handling form state.
+- [Tailwind CSS](https://tailwindcss.com): Tailwind CSS is a utility-first CSS framework that allows for rapid development by providing a customizable set of pre-defined classes for building responsive and flexible user interfaces.
 
-You have the freedom to choose any component library you prefer.
+# Getting Started 
+  
+## - To run the project locally, follow these steps:
 
-Additionally, please include a Dockerfile that enables us to run the next application easily by running the Docker container.
+  1. Download the project source code by clicking the following link: [Download Project](https://github.com/bcmendis/CTH-dev-test/archive/refs/heads/main.zip)
+  2. Extract the downloaded zip file to a directory of your choice.
+  3. Open a terminal or command prompt and navigate to the extracted directory.
+  4. Install the dependencies by running the following command:
 
-# Other notes
+  ``` bash
+  npm install
+  ```
 
-While we are not monitoring the time, the exercise should take you less than an hour to complete. Consider things like code quality, proper git usage (such a granular commits, meaningful commit messages etc.), ease of use etc.
+  5. Start the development server using the following command:
 
-## How to submit
+  ``` bash
+  npm start
+  ```
 
-1. Fork this repository to a public one on your account.
-2. Complete the exercise.
-3. When you're done, submit your fork as a pull request back to this repository.
+  6. Open [http://localhost:3000](http://localhost:3000) in your web browser to view the application.
+<br/>
+
+## - Alternatively, you can use Docker to quickly run the app.
+<br/>
+Build the Docker image and run the container with the following commands:
+
+```bash
+docker build -t login-app .
+docker run -d -p 3000:3000 login-app
+```
+
+After running these commands, you can access the application by opening http://localhost:3000 in your web browser.
+
+Make sure you have Docker installed and running on your machine before using the Docker commands.
