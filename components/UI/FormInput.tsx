@@ -21,9 +21,7 @@ const FormInput = ({
     <div className="mt-6">
       <label
         htmlFor={id}
-        className={`block text-xs sm:text-sm pb-2 font-semibold ${
-          error ? "text-red-500 font-bold" : ""
-        }`}
+        className={`form_label ${error ? "form_label_error" : ""}`}
       >
         {error ? errorMessage : label}
       </label>
@@ -32,9 +30,7 @@ const FormInput = ({
         id={id}
         {...register}
         placeholder={`Enter your ${label}`}
-        className={`border-2 p-2 rounded-md w-full text-xs sm:text-sm focus:outline-none border-gray-500 focus:border-purple-500 focus:ring-purple-500 ${
-          error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""
-        }`}
+        className={`form_input ${error ? "form_input_error" : ""}`}
       />
     </div>
   );

@@ -1,8 +1,9 @@
 import LoginForm from "@/components/LoginForm";
+import React from "react";
 
 const Login = () => {
   return (
-    <main className="min-h-screen w-screen flex items-center justify-center">
+    <main className="loginPage">
       <LoginForm />
     </main>
   );

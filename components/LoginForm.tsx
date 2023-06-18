@@ -52,15 +52,11 @@ const LoginForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      noValidate
-      className="flex bg-white rounded-lg min-w-[250px] w-[90%] md:w-3/4 xl:w-1/2 border-gray-500 shadow-lg"
-    >
-      <section className="flex-1 text-gray-700 p-6 md:px-20 md:py-16">
-        <h1 className="text-center md:text-left text-xl md:text-3xl pb-2 font-bold">
-          Login
-        </h1>
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="loginForm">
+      <section className="form_section">
+        <h1 className="form_header">Login</h1>
+
+        {/* Email field */}
         <FormInput
           id="email"
           label="Email"
@@ -81,44 +77,42 @@ const LoginForm = () => {
         />
 
         {/* Login checkbox */}
-        <div className="flex items-center gap-2 mt-4 text-xs sm:text-sm">
+        <div className="form_checkbox_container">
           <input
             type="checkbox"
             id="checkbox"
             value="checked"
-            className="h-5 w-5 rounded-full outline-none text-purple-500 focus:ring-transparent focus:outline-none"
+            className="form_checkbox"
           />
           <label htmlFor="checkbox">Keep me logged in</label>
         </div>
 
         {/* Buttons */}
-        <div className="flex w-full gap-5 md:gap-2 items-center justify-center text-xs sm:text-sm mt-10">
+        <div className="form_button_container">
           <button
             type="submit"
             disabled={Object.keys(errors).length > 0}
-            className={`flex-1 text-white py-3 rounded-lg ${
+            className={`form_button_submit ${
               Object.keys(errors).length === 0
-                ? "bg-purple-500 hover:scale-105 ease-in-out"
-                : "bg-purple-500/50"
+                ? "form_button_submit_enabled"
+                : "form_button_submit_disabled"
             }`}
           >
             Login
           </button>
-          <button className="flex-1 py-3 text-purple-500 font-bold hover:scale-105 ease-in-out">
-            Cancel
-          </button>
+          <button className="form_button_cancel">Cancel</button>
         </div>
       </section>
 
       {/* Image */}
-      <section className="hidden md:block flex-1 relative overflow-hidden">
+      <section className="form_image_container">
         <Image
           src={formImage}
           alt="loginImage"
           priority
           fill
           sizes="25vw"
-          className="object-cover rounded-lg brightness-75"
+          className="form_image"
         />
       </section>
     </form>
