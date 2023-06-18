@@ -1,91 +1,57 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0 0 1rem;
-  line-height: 1.15;
-  font-size: 3.6rem;
-}
-
-.title {
+.formBody {
+  background-color: lightsteelblue;
+  width: 30%;
+  position: absolute;
+  top: 25%;
+  left: 36%;
+  padding: 0.3% 0 3% 0;
+  border-radius: 15%;
   text-align: center;
+  font-size: 30px;
 }
 
-.title,
-.description {
+.formHead {
   text-align: center;
+  font-size: 30px;
+  margin: 5%;
+  font-weight: bold;
 }
 
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
+.logForm {
+  margin: auto;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  max-width: 800px;
-  margin-top: 3rem;
-}
-
-.card {
-  margin: 1rem;
-  flex-basis: 45%;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
+.formInput {
+  width: 70%;
+  height: 40px;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  background: black;
+  color: white;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin-bottom: 25px;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
 }
 
-.card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.message {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.errorMessage {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
 }
