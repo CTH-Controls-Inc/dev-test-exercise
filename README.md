@@ -1,1 +1,5 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Build Docker container:
+docker build -t nextjs-login .
+
+Run Docker container:
+docker run -p 3000:3000 nextjs-login
