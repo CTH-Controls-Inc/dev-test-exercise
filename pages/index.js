@@ -21,6 +21,15 @@ const LoginPage = () => {
     setIsSubmitted(true);
   };
 
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const handleBlur = () => {
+    setIsValidEmail(validateEmail(email));
+  };
+
   return (
     <React.Fragment>
       <div className={styles.formBody}>
@@ -33,6 +42,7 @@ const LoginPage = () => {
               type="email"
               value={email}
               onChange={handleEmailChange}
+              onBlur={handleBlur}
               style={{
                 border: isValidEmail ? "" : "5px solid red",
               }}
