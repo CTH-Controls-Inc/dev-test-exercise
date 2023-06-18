@@ -15,10 +15,10 @@ may need to install redux, yup and formik and typescript.
 
 to install them write in terminal :
 
-npm install react-redux redux @reduxjs/toolkit
-npm install typescript
-npm install yup
-npm install formik
+1. npm install react-redux redux @reduxjs/toolkit
+2. npm install typescript
+3. npm install yup
+4. npm install formik
 
 technology used :
 
