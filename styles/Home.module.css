@@ -1,0 +1,57 @@
+.formBody {
+  background-color: lightsteelblue;
+  width: 30%;
+  position: absolute;
+  top: 25%;
+  left: 36%;
+  padding: 0.3% 0 3% 0;
+  border-radius: 15%;
+  text-align: center;
+  font-size: 30px;
+}
+
+.formHead {
+  text-align: center;
+  font-size: 30px;
+  margin: 5%;
+  font-weight: bold;
+}
+
+.logForm {
+  margin: auto;
+}
+
+.formInput {
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.message {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
