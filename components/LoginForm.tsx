@@ -1,14 +1,18 @@
-'use client'
+"use client";
 
+import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
+import formImage from "@/public/laser.jpg";
 import FormInput from "./UI/FormInput";
 
 type FormValues = {
   email: string;
+  password: string;
 };
 
 // Email validation Regular Expression as per W3C specification
-const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const regex =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 const LoginForm = () => {
   // Initializing React-Hook-Form
@@ -16,9 +20,11 @@ const LoginForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormValues>({
     defaultValues: {
       email: "",
+      password: "",
     },
     mode: "all",
   });
@@ -33,11 +39,17 @@ const LoginForm = () => {
     }),
   };
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log("Form Values:", data);
+  const passwordRegister = {
+    ...register("password", {
+      required: "Password is required",
+    }),
   };
 
-  console.log(errors);
+  // Form submit handler
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log("Form Values:", data);
+    reset();
+  };
 
   return (
     <form
@@ -57,6 +69,29 @@ const LoginForm = () => {
           errorMessage={errors.email?.message || null}
           register={emailRegister}
         />
+
+        {/* Password field */}
+        <FormInput
+          id="password"
+          label="Password"
+          type="password"
+          error={!!errors.password}
+          errorMessage={errors.password?.message || null}
+          register={passwordRegister}
+        />
+
+        {/* Login checkbox */}
+        <div className="flex items-center gap-2 mt-4 text-xs sm:text-sm">
+          <input
+            type="checkbox"
+            id="checkbox"
+            value="checked"
+            className="h-5 w-5 rounded-full outline-none text-purple-500 focus:ring-transparent focus:outline-none"
+          />
+          <label htmlFor="checkbox">Keep me logged in</label>
+        </div>
+
+        {/* Buttons */}
         <div className="flex w-full gap-5 md:gap-2 items-center justify-center text-xs sm:text-sm mt-10">
           <button
             type="submit"
@@ -64,7 +99,24 @@ const LoginForm = () => {
           >
             Submit
           </button>
+          <button
+            type="button"
+            className="flex-1 py-3 text-purple-500 font-bold hover:scale-105 ease-in-out"
+          >
+            Cancel
+          </button>
         </div>
+      </section>
+      {/* Image */}
+      <section className="hidden md:block flex-1 relative overflow-hidden">
+        <Image
+          src={formImage}
+          alt="loginImage"
+          priority
+          fill
+          sizes="25vw"
+          className="object-cover rounded-lg brightness-75"
+        />
       </section>
     </form>
   );
