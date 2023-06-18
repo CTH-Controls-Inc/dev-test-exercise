@@ -1,5 +1,35 @@
 # Dev Test
 
+## Notes from the author
+
+Author: F M Mushfiqur Rahman
+email: mushfiq.rumc@gmail.com
+
+to run the code :
+write in terminal :
+"npm run dev"
+
+This should start the page in [localhost : 3000 ](http://localhost:3000/)
+
+may need to install redux, yup and formik and typescript.
+
+to install them write in terminal :
+
+1. npm install react-redux redux @reduxjs/toolkit
+2. npm install typescript
+3. npm install yup
+4. npm install formik
+
+technology used :
+
+1. next js
+2. react
+3. yup
+4. formik
+5. redux
+6. typescript
+7. custom css codes for animation. (applied using multiple methods)
+
 ## Exercise
 
 Create a basic web application using next.js + React to display a login page. The login page should include fields for email and password. The page doesn't need to have actual functionality, but it should have the following feature:
