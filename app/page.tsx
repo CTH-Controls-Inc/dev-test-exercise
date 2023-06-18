@@ -1,10 +1,11 @@
-import LoginForm from '@/components/LoginForm'
-import Image from 'next/image'
+import LoginForm from "@/components/LoginForm";
 
-export default function Home() {
+const Login = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="min-h-screen w-screen flex items-center justify-center">
       <LoginForm />
     </main>
-  )
-}
+  );
+};
+
+export default Login;
