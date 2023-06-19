@@ -31,10 +31,10 @@ export default function LoginForm() {
         <br />
         <br />
         <label>
-         Password:
-         <input type="text" name="password" required />
-       </label>
-
+          Password:
+          <input type="text" name="password" required />
+        </label>
+        <input type="submit" value="Submit" />
       </form>
     </div>
   )
