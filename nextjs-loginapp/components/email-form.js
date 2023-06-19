@@ -17,7 +17,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div>
+    <div className={styles.formcenter}>
       <form>
         <h2>CTH Controls Exercise: Please enter your email</h2>
         <h3>Result: {message}</h3>
