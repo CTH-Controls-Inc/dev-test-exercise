@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import LoginTwoToneIcon from '@mui/icons-material/LoginTwoTone';
 
+// Email validation
 function validateEmail(value) {
   let error;
   if (!value) {
@@ -16,6 +17,7 @@ function validateEmail(value) {
   return error;
 }
 
+// password validation
 function validatePassword(value) {
   let error;
 
@@ -43,13 +45,14 @@ function Login() {
     <Grid>
       <Paper elevation={3} style={paperstyle}>
         <Grid align='center'>
+          {/* Sign in logo */}
           <Avatar sx={{ bgcolor: '#1976D2' }}>
             <LoginTwoToneIcon />
           </Avatar>
           <h2>Sign In</h2>
         </Grid>
         <Formik
-          initialValues={{ email: '' }}
+          initialValues={{ email: '', password: '' }}
           onSubmit={(values) => {
             console.log(values);
           }}
