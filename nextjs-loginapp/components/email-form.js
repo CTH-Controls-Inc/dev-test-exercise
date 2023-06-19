@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import styles from '../styles/email.module.css';
 
 export default function LoginForm() {
+  const [message, setMessage] = useState('');
+
   return (
     <div>
       <form>
