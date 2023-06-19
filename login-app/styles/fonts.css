@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'YourFontName';
+    src: url('/fonts/your-font-file.ttf') format('truetype');
+    /* Add additional src declarations for other font file formats if available */
+    /* Example: src: url('/fonts/your-font-file.woff2') format('woff2'); */
+    /* Example: src: url('/fonts/your-font-file.woff') format('woff'); */
+    /* Ensure the file paths match the actual file names and formats */
+    /* Adjust the font-family name and file paths accordingly */
+  }
+  
+  /* Optionally, you can specify font styles for specific elements */
+  body {
+    font-family: 'Quicksand-VariableFont_wght', sans-serif;
+  }
+  
