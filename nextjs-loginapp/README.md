@@ -4,7 +4,7 @@ This is a exercise to create a front-end app to validate email address. Usually 
 1. cd to nextjs-loginapp folder
 
 2. build docker environment
-    - ```sudo docker build -t nextjs-exercise```
+    - ```sudo docker build -t nextjs-exercise .```
 
 3. run the docker in 3000 port
     - ```sudo docker run -dp 3000:3000 nextjs-exercise```
