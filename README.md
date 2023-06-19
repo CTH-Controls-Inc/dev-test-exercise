@@ -1,3 +1,8 @@
+## How it looks
+
+![ezgif com-video-to-gif](https://github.com/kainat-anjum/dev-test-exercise/assets/61592772/ae436bb6-0e08-43e6-b83c-d5cc8f19950e)
+
+
 ## Instructions:
 
 This is a NextJS Project and to run the project please follow the instructions below.
@@ -10,6 +15,7 @@ This is a NextJS Project and to run the project please follow the instructions b
 ### In order to run the project with `Docker` follow the steps below
 - Build the docker by `docker build -t cth-test-app .`
 - Run the docker container by `docker run -d -p 3000:3000 cth-test-app`
+- Open `http://localhost:3000` to access the application
 
 ## Reasoning behind Design Decision took in this project
 
