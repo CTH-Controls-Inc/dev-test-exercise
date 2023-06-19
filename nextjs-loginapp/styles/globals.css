@@ -42,6 +42,6 @@ button {
 }
 
 label {
-  display: block; /* add this */
+  display: block;
   padding-top: 5px;
 }
