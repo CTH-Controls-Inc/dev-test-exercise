@@ -1,5 +1,9 @@
 CTH Controls Login App
 
+To build use following command:
+
+docker build -t login-app:developement .
+
 To run use following command:
 
 docker run --publish 3000:3000 login-app:development
