@@ -7,11 +7,11 @@ export default function LoginForm() {
   const handleChange = (event) => {
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (validRegex.test(event.target.value)){
-      event.target.style.border = '10px solid green'
+      event.target.style.border = '5px solid green'
       setMessage("Valid Email Address")
     }
     else{
-      event.target.style.border = '10px solid red'
+      event.target.style.border = '5px solid red'
       setMessage("Invalid Email Address")
     }
   };
@@ -20,6 +20,7 @@ export default function LoginForm() {
     <div>
       <form>
         <h2>CTH Controls Exercise: Please enter your email</h2>
+        <h3>Result: {message}</h3>
         <label>
           Email:
           <input type="email" name="email"
@@ -33,7 +34,7 @@ export default function LoginForm() {
          Password:
          <input type="text" name="password" required />
        </label>
-        <h3>Result: {message}</h3>
+
       </form>
     </div>
   )
