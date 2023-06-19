@@ -1,3 +1,9 @@
+CTH Controls Login App
+
+To run use following command:
+
+docker run --publish 3000:3000 login-app:development
+
 # Dev Test
 
 ## Exercise
