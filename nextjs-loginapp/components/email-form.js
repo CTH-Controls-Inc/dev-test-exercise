@@ -7,9 +7,11 @@ export default function LoginForm() {
   const handleChange = (event) => {
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (validRegex.test(event.target.value)){
+      event.target.style.border = '10px solid green'
       setMessage("Valid Email Address")
     }
     else{
+      event.target.style.border = '10px solid red'
       setMessage("Invalid Email Address")
     }
   };
@@ -22,6 +24,7 @@ export default function LoginForm() {
           Email:
           <input type="email" name="email"
           onChange={handleChange}
+          style={{border: '1px solid grey'}}
           />
         </label>
         <br />
