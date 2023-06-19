@@ -9,7 +9,7 @@ export default function Home() {
 
   const handleLogin = async (data: FieldValues) => {
     if (!isValidEmail(data.email)) {
-      setError('Email format invalid')
+      setError('Invalid email format')
     }
   }
 
