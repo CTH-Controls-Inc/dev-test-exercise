@@ -1,21 +1,23 @@
-# Dev Test
+## How it looks
 
-## Exercise
+![ezgif com-video-to-gif](https://github.com/kainat-anjum/dev-test-exercise/assets/61592772/ae436bb6-0e08-43e6-b83c-d5cc8f19950e)
 
-Create a basic web application using next.js + React to display a login page. The login page should include fields for email and password. The page doesn't need to have actual functionality, but it should have the following feature:
 
-- When the user enters a value that is not a valid email address in the email field, the box should have a red border and display a notification informing the user that the entered value is not a valid email.
+## Instructions:
 
-You have the freedom to choose any component library you prefer.
+This is a NextJS Project and to run the project please follow the instructions below.
 
-Additionally, please include a Dockerfile that enables us to run the next application easily by running the Docker container.
+### Preferred method
+- `npm istall` to install `node_modules`
+- Once the Node Modules are installed run `npm run dev` command
+- Once the server has started, open `http://localhost:3000` to access the application
 
-# Other notes
+### In order to run the project with `Docker` follow the steps below
+- Build the docker by `docker build -t cth-test-app .`
+- Run the docker container by `docker run -d -p 3000:3000 cth-test-app`
+- Open `http://localhost:3000` to access the application
 
-While we are not monitoring the time, the exercise should take you less than an hour to complete. Consider things like code quality, proper git usage (such a granular commits, meaningful commit messages etc.), ease of use etc.
+## Reasoning behind Design Decision took in this project
 
-## How to submit
-
-1. Fork this repository to a public one on your account.
-2. Complete the exercise.
-3. When you're done, submit your fork as a pull request back to this repository.
+- For a project of this size there isn't a need for component library. To demonstrate that I have worked with Component Libraries I have included `Bootstrap`. For more professional/complex projects I would've preffered `AntD` or `Material UI` since they provide complex component such as date-pickers/tables out of the box.
+- If the application had more forms I would prefer to use dedicated forms library such as `Formik` or `React Hook Form`
