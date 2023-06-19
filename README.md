@@ -1,4 +1,14 @@
-# Dev Test
+# Code Explanation
+
+Added debounce logic to the email field and set the delay for 1 second to prevent the persisting email error message when user touches the field.
+now the error displays after one second or when user moves from the email field.
+
+you can run the app using 
+npm start or npm dev
+and test website 
+`http://localhost:3000`
+
+
 
 ## Exercise
 
