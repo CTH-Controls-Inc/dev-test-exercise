@@ -1,5 +1,12 @@
 # Dev Test
 
+## How to run
+
+1. run `docker build -t docker_nextjs:developement .    `
+2. ensure image is created by running `docker image ls `
+3. publish the image with `docker run --publish 3000:3000 docker_nextjs:developement `
+
+   
 ## Exercise
 
 Create a basic web application using next.js + React to display a login page. The login page should include fields for email and password. The page doesn't need to have actual functionality, but it should have the following feature:
