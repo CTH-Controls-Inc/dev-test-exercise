@@ -1,0 +1,7 @@
+@import url('../styles/login-style.module.css');
+@import url('../styles/error-message-style.module.css');
+
+:root {
+  --primary-font: 2rem;
+  --secondary-font: 5rem;
+}
