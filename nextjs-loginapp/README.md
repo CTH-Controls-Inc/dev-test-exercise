@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+This is a exercise to create a front-end app to validate email address. Usually it can be used on login page.
