@@ -56,6 +56,7 @@ const LoginPage = () => {
             />
           </label>
           <div className="mt-4">
+            {/* the reason not using disabled proprty of button becuase I like to display html5 error message for now  */}
             <button className="py-2 px-4 bg-blue-600 text-white rounded-md w-full" type='submit'>
               Login
             </button>
