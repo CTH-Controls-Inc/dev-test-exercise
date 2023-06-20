@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ["var(--font-heading)"],
+        description: ["var(--font-description)"],
+        descriptionBold: ["var(--font-description-bold)"],
+      },
       colors: {
         retroradwarm: {
           DEFAULT: '#f6dcad',
