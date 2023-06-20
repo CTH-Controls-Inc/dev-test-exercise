@@ -37,7 +37,7 @@ const Login = () => {
                         type="email"
                         value={email}
                         onChange={handleEmailChange}
-                        style={{ border: isEmailValid ? '1px solid black' : '1px solid red' }}
+                        style={{ border: isEmailValid ? '1px solid black' : '2px solid red' }}
                     />
                     {!isEmailValid && <p>Please enter a valid email address.</p>}
                 </div>
