@@ -9,5 +9,5 @@ docker-compose up
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-Additionally this project does not need the node_module as we are runni8ng container
+Additionally this project does not need the node_module as we are running container
 
