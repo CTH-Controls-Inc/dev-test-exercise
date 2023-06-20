@@ -1,21 +1,13 @@
-# Dev Test
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Exercise
+## Getting Started
 
-Create a basic web application using next.js + React to display a login page. The login page should include fields for email and password. The page doesn't need to have actual functionality, but it should have the following feature:
+First, run the development server:
 
-- When the user enters a value that is not a valid email address in the email field, the box should have a red border and display a notification informing the user that the entered value is not a valid email.
+```bash
+docker-compose up
+```
 
-You have the freedom to choose any component library you prefer.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Additionally this project does not need the node_module as we are running container
 
-Additionally, please include a Dockerfile that enables us to run the next application easily by running the Docker container.
-
-# Other notes
-
-While we are not monitoring the time, the exercise should take you less than an hour to complete. Consider things like code quality, proper git usage (such a granular commits, meaningful commit messages etc.), ease of use etc.
-
-## How to submit
-
-1. Fork this repository to a public one on your account.
-2. Complete the exercise.
-3. When you're done, submit your fork as a pull request back to this repository.
