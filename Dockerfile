@@ -6,7 +6,8 @@ COPY package.json ./
 
 RUN npm install
 
-COPY . .
+# mapping code with compose file volume
+# COPY . .
 
 EXPOSE 3000
 
