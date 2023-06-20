@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { onLogin } from "./validatorApi";
 
 const Login = () => {
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
@@ -14,24 +15,41 @@ const Login = () => {
     setLoginData({ ...loginData, [event.target.name]: event.target.value });
   };
 
-  // Email validation using Regex
+  // Front End Email validation using Regex
   const emailIsValid = (email) => {
     const emailTestRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailTestRegex.test(email);
   };
 
-  // Login Handler with Success and Error messages
-  const handleLogin = async (event) => {
+  // Back End Email validation with Success and Error messages receivied from server validator
+  const handleLoginBE = async (event) => {
     event.preventDefault();
     try {
+      const response = await onLogin(loginData);
+      if (response) {
+        setEmailSuccessMessage(response.message);
+        setTimeout(() => {
+          setEmailSuccessMessage("");
+        }, 1000);
+      }
+    } catch (error) {
+      setEmailErrorMessage(error.response.data.errors[0].msg);
+      setTimeout(() => {
+        setEmailErrorMessage("");
+      }, 1000);
+    }
+  };
+
+  const handleLoginFE = async (event) => {
+    try {
       if (!emailIsValid(loginData.email)) {
-        setEmailErrorMessage("Please use a valid email address.");
+        setEmailErrorMessage("Please use a valid email address. (Client Side Validation)");
         setTimeout(() => {
           setEmailErrorMessage("");
         }, 1000);
         return;
       } else {
-        setEmailSuccessMessage("Email address is valid.");
+        setEmailSuccessMessage("Email address is valid. (Client Side Validation)");
         setTimeout(() => {
           setEmailSuccessMessage("");
         }, 1000);
@@ -46,7 +64,7 @@ const Login = () => {
       <div className="container d-flex flex-column align-items-center mt-5">
         <h3 className="text-center">Login Page</h3>
         <div className="mt-5">
-          <Form onSubmit={handleLogin}>
+          <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -73,13 +91,19 @@ const Login = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-between">
               {!emailErrorMessage && !emailSuccessMessage && (
-                <Button variant="primary" type="submit">
-                  Login
+                <Button variant="primary" type="submit" onClick={handleLoginBE}>
+                  Login BE
+                </Button>
+              )}
+              {!emailErrorMessage && !emailSuccessMessage && (
+                <Button variant="primary" type="submit" onClick={handleLoginFE}>
+                  Login FE
                 </Button>
               )}
             </div>
+
             <div className="d-flex justify-content-center mt-3">
               {emailErrorMessage && (
                 <p
