@@ -1,12 +1,10 @@
+import {LoginPage} from './../components/login'
+
 export default function Home() {
   return (
     <>
       <main>
-        <div>
-          <p>
-              Login&nbsp;
-          </p>
-        </div>
+        <LoginPage/>
       </main>
     </>
   )
