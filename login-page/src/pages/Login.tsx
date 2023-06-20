@@ -69,11 +69,14 @@ const Login = () => {
       ) : (
         <form onSubmit={handleSubmit} className={styles.formStyles}>
           <h1>Login</h1>
-          <label>
+          <label htmlFor="userEmail">
             Email:
+            </label>
             <input
               type="email"
               value={email}
+              id="userEmail"
+              placeholder="email"
               onChange={handleEmailChange}
               onBlur={() => setEmailTouched(true)}
               className={`${styles.inputField} ${
@@ -82,19 +85,22 @@ const Login = () => {
               required
               ref={emailInputRef}
             />
-          </label>
+         
           {isEmailTouched && !isEmailValid && (
             <p className={styles.error}>Please enter a valid email address</p>
           )}
-          <label>
+          <label htmlFor="password">
             Password:
+            </label>
             <input
               type="password"
               value={password}
+              id="password"
+              placeholder="password"
               onChange={handlePasswordChange}
               required
             />
-          </label>
+        
           <button type="submit">Login</button>
         </form>
       )}
