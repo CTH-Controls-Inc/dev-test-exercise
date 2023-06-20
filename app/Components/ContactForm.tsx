@@ -71,6 +71,24 @@ const ContactForm = () => {
                             />
                         </div>
 
+                        <div className='relative w-full mt-2'>
+                            <label className='pl-1 text-lg font-heading text-retroblack-50'
+                                htmlFor='form-email'
+                            >
+                                Password
+                            </label>
+                            <input
+                                className={`w-full px-2 py-1 mb-1 leading-none border-x-retroblack-50 border-2 rounded outline-none appearance-none text-retroblack placeholder-retroblack placeholder-opacity-70 font-description focus:bg-white`}
+                                id='form-password'
+                                name='password'
+                                type='password'
+                                placeholder='Password'
+                                defaultValue={formState.password}
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                            />
+                        </div>
+
                     </form>
 
                 </div>
