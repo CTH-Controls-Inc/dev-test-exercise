@@ -1,21 +1,53 @@
-# Dev Test
+## My Next.js Login App
+This is a basic web application built with Next.js and React.
 
-## Exercise
+The project was bootstrapped with Create Next App.
 
-Create a basic web application using next.js + React to display a login page. The login page should include fields for email and password. The page doesn't need to have actual functionality, but it should have the following feature:
+## Local Development
+To run the application locally, follow these steps:
 
-- When the user enters a value that is not a valid email address in the email field, the box should have a red border and display a notification informing the user that the entered value is not a valid email.
+- Make sure you have Node.js installed on your machine.
 
-You have the freedom to choose any component library you prefer.
+- Clone this repository to your local machine.
 
-Additionally, please include a Dockerfile that enables us to run the next application easily by running the Docker container.
+```bash
+git clone https://github.com/annkornienko/dev-test-exercise.git
+```
 
-# Other notes
+- Navigate to the project directory.
 
-While we are not monitoring the time, the exercise should take you less than an hour to complete. Consider things like code quality, proper git usage (such a granular commits, meaningful commit messages etc.), ease of use etc.
+- Install the dependencies using npm or yarn.
 
-## How to submit
+```bash
+npm install
+```
 
-1. Fork this repository to a public one on your account.
-2. Complete the exercise.
-3. When you're done, submit your fork as a pull request back to this repository.
+- Start the development server.
+
+```bash
+npm run dev
+```
+
+- Open your browser and visit http://localhost:3000 to access the application.
+
+## Docker
+To run the application using Docker, follow these steps:
+
+- Make sure you have Docker installed on your machine.
+
+- Clone this repository to your local machine (if you haven't already).
+
+- Navigate to the project directory.
+
+- Build the Docker image:
+
+```bash
+docker build -t next-app .
+```
+
+- Run the Docker container:
+
+```bash
+docker run -p 8080:3000 next-app
+```
+- Open your browser and visit http://localhost:8080 to access the application.
