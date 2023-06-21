@@ -1,21 +1,71 @@
-# Dev Test
+# With Docker
 
-## Exercise
+This examples shows how to use Docker with Next.js based on the [deployment documentation](https://nextjs.org/docs/deployment#docker-image). Additionally, it contains instructions for deploying to Google Cloud Run. However, you can use any container-based deployment host.
 
-Create a basic web application using next.js + React to display a login page. The login page should include fields for email and password. The page doesn't need to have actual functionality, but it should have the following feature:
+## How to use
 
-- When the user enters a value that is not a valid email address in the email field, the box should have a red border and display a notification informing the user that the entered value is not a valid email.
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
-You have the freedom to choose any component library you prefer.
+```bash
+npx create-next-app --example with-docker nextjs-docker
+# or
+yarn create next-app --example with-docker nextjs-docker
+# or
+pnpm create next-app --example with-docker nextjs-docker
+```
 
-Additionally, please include a Dockerfile that enables us to run the next application easily by running the Docker container.
+## Using Docker
 
-# Other notes
+1. [Install Docker](https://docs.docker.com/get-docker/) on your machine.
+1. Build your container: `docker build -t nextjs-docker .`.
+1. Run your container: `docker run -p 3000:3000 nextjs-docker`.
 
-While we are not monitoring the time, the exercise should take you less than an hour to complete. Consider things like code quality, proper git usage (such a granular commits, meaningful commit messages etc.), ease of use etc.
+You can view your images created with `docker images`.
 
-## How to submit
+### In existing projects
 
-1. Fork this repository to a public one on your account.
-2. Complete the exercise.
-3. When you're done, submit your fork as a pull request back to this repository.
+To add support for Docker to an existing project, just copy the `Dockerfile` into the root of the project and add the following to the `next.config.js` file:
+
+```js
+// next.config.js
+module.exports = {
+  // ... rest of the configuration.
+  output: 'standalone',
+}
+```
+
+This will build the project as a standalone app inside the Docker image.
+
+## Deploying to Google Cloud Run
+
+1. Install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) so you can use `gcloud` on the command line.
+1. Run `gcloud auth login` to log in to your account.
+1. [Create a new project](https://cloud.google.com/run/docs/quickstarts/build-and-deploy) in Google Cloud Run (e.g. `nextjs-docker`). Ensure billing is turned on.
+1. Build your container image using Cloud Build: `gcloud builds submit --tag gcr.io/PROJECT-ID/helloworld --project PROJECT-ID`. This will also enable Cloud Build for your project.
+1. Deploy to Cloud Run: `gcloud run deploy --image gcr.io/PROJECT-ID/helloworld --project PROJECT-ID --platform managed`. Choose a region of your choice.
+
+   - You will be prompted for the service name: press Enter to accept the default name, `helloworld`.
+   - You will be prompted for [region](https://cloud.google.com/run/docs/quickstarts/build-and-deploy#follow-cloud-run): select the region of your choice, for example `us-central1`.
+   - You will be prompted to **allow unauthenticated invocations**: respond `y`.
+
+Or click the button below, authorize the script, and select the project and region when prompted:
+
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/vercel/next.js.git&dir=examples/with-docker)
+
+## Running Locally
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
