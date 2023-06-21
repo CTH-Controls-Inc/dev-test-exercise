@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Login = ({ onSubmit }) => {
+const Login = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [isEmailValid, setEmailValid] = useState(true);
 
 	const handleEmailChange = (e) => {
-		const emailcurrentstate = event.target.value;
+		const emailcurrentstate = e.target.value;
 		setEmail(emailcurrentstate);
 		console.log(email.length);
 
@@ -32,8 +32,6 @@ const Login = ({ onSubmit }) => {
 			setEmailValid(false);
 			return;
 		}
-
-		onSubmit({ email, password });
 	};
 
 	const validateEmail = (emailValue) => {
@@ -91,10 +89,6 @@ const Login = ({ onSubmit }) => {
 			</div>
 		</div>
 	);
-};
-
-Login.propTypes = {
-	onSubmit: PropTypes.func.isRequired,
 };
 
 export default Login;
