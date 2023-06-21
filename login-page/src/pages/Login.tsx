@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import styles from "../styles/Login.module.css";
+import { Button } from "@nextui-org/react";
+
 
 const Login = () => {
   //State variable to track email, password and form interaction
@@ -101,7 +103,9 @@ const Login = () => {
               required
             />
         
-          <button type="submit">Login</button>
+        <Button type="submit" auto>
+            Login
+          </Button>
         </form>
       )}
     </div>
