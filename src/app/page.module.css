@@ -1,0 +1,44 @@
+.main {
+  margin: auto;
+  width: 80%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid rgb(73, 127, 186);
+}
+
+.input__label {
+  margin-bottom: 10px;
+  color: rgb(73, 127, 186);
+}
+
+.input--error {
+  border: 2px solid rgb(160, 18, 18);;
+}
+
+.error-message {
+  color: rgb(160, 18, 18);
+}
+
+.button {
+  
+  padding: 10px 20px;
+  border: none;
+  background-color: #497fba;
+  color: white;
+  border-radius: 7px;
+  font-size: 18px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #325a84;
+}
