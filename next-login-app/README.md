@@ -1,3 +1,13 @@
+Next Js application for login email validation
+
+The login form validates user input and displays error and message to notify user to enter required input in the correct format.
+
+## Docker commands
+
+The functionality can be seen by running the application within a Docker container (with next-login-app as current directory)
+docker build -t nextjs-login .
+docker run -p 3000:3000 nextjs-login
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
