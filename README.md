@@ -1,5 +1,19 @@
 # Dev Test
 
+## Docker Support
+
+This application can be run as a Docker container. Follow these steps to run the application using Docker:
+
+1. Build the Docker image:
+
+   ```shell
+   docker build -t test-app
+   ```
+2. Run the Docker container:
+   ```shell
+   docker run -p 3000:3000 test-app
+   ```
+
 ## Exercise
 
 Create a basic web application using next.js + React to display a login page. The login page should include fields for email and password. The page doesn't need to have actual functionality, but it should have the following feature:
