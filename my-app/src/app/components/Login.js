@@ -7,6 +7,11 @@ import { useState } from "react";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorEmail, setErrorEmail] = useState(false);
+    const handleSubmit = () =>{
+
+    }
+
   return (
     <div>
         <div style={{
@@ -15,23 +20,23 @@ const Login = () => {
             justifyContent:"center",
             alignItems:"center"
         }}>
-   <Form>
-            <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+        <Form>
+            <Form.Group  className="mb-3" controlId="formPlaintextEmail">
                 <Form.Label column sm="2">
                 Email
                 </Form.Label>
-                <Col sm="10">
-                <Form.Control plaintext  defaultValue="email@example.com" />
-                </Col>
+                
+                <Form.Control isInvalid={errorEmail}  defaultValue="email@example.com" />
+               
             </Form.Group>
 
-            <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+            <Form.Group className="mb-3" controlId="formPlaintextPassword">
                 <Form.Label column sm="2">
                 Password
                 </Form.Label>
-                <Col sm="10">
+            
                 <Form.Control type="password" placeholder="Password" />
-                </Col>
+                
             </Form.Group>
         <Button>Submit</Button>
       </Form>
