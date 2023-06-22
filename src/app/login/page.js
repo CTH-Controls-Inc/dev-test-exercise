@@ -13,7 +13,7 @@ const schema = yup.object().shape({
   password: yup.string().required("Password is required"),
 });
 
-export default function Home() {
+export default function Login() {
   const {
     register,
     handleSubmit,
@@ -28,7 +28,6 @@ export default function Home() {
     // Handle login logic here
     console.log(data);
   }
-
 
   return (
     <div className="steam-signup-form">
