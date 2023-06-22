@@ -2,6 +2,7 @@ import React, { useState } from "react"
 
 const Index =()=>{
 
+  // Hooks
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
   const [emailDisplay, setemailDisplay] = useState(false)
@@ -9,23 +10,25 @@ const Index =()=>{
   const [disabled, setDisabled] = useState(false)
 
 
-
+//  Form Submitted Handling Function
   const handleSubmit =  (e:any)=>{
     e.preventDefault();
 
+    // Checek if email is valid
     if (!email || (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email))) {
       setemailDisplay(true)
     }else{
       setemailDisplay(false)
     }
     
+    // check if password is valid
     if (!pass) {
       setpassDisplay(true)
     }else{
       setpassDisplay(false)
     }
     
-  
+  // Disable Login when form Submitted successfully 
     if ((emailDisplay == false) && (passDisplay==false) && (email !="") && (pass !="")) {
           console.log("form submited")
           setEmail("")
@@ -45,6 +48,7 @@ const Index =()=>{
 
 
 return <>
+
 <form className="loginContainer flex justify-center h-screen bg-slate-100 " onSubmit={handleSubmit}>
     <div className="loginCard flex flex-col grow shadow-lg place-content-center max-h-96 m-7 bg-white rounded max-w-sm p-4">
 
