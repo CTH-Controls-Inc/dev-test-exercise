@@ -11,17 +11,7 @@ export default function UserLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState(null);
-
-  // focuses the input only when component loads (empty dependency [])
-  // useEffect(() => {
-  //   userRef.current.focus();
-  // }, []);
-
-  // clear out error message when username or password changes
-  // user may have read error, so when they go to continue typing, error should go away
-  useEffect(() => {
-    setErrorMsg("");
-  }, [email, password]);
+  const [formIsInvalid, setFormIsInvalid] = useState(false);
 
   const onLogInSubmit = async () => {
     //  EXAMPLE
@@ -38,9 +28,20 @@ export default function UserLogin() {
   const onEmailChanged = (e) => setEmail(e.target.value);
   const onPasswordChanged = (e) => setPassword(e.target.value);
 
+  useEffect(() => {
+    if (email.length > 1 && !email.includes("@")) {
+      setErrorMsg("Email requires an @");
+      setFormIsInvalid(true);
+    } else {
+      setErrorMsg("");
+      setFormIsInvalid(false);
+    }
+  }, [email]);
+
   const formFields = {
     error: errorMsg,
     formTitle: "User Login",
+    formInvalid: formIsInvalid,
   };
 
   const formLabelAndInputFields = [

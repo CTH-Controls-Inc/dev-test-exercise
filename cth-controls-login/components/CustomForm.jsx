@@ -4,7 +4,7 @@ export default function CustomForm({
   canSaveParams,
   buttonInfo,
 }) {
-  const { error, formTitle } = formFields;
+  const { error, formTitle, formInvalid } = formFields;
 
   // all have to be Boolean (true) for button to be clicked
   const canSave = canSaveParams.every(Boolean);
@@ -14,11 +14,6 @@ export default function CustomForm({
       className="flex flex-col items-center justify-center space-y-4"
       onSubmit={(e) => e.preventDefault()}
     >
-      {/* aria-live monitors element for changes, and reads aloud as a screen reader,
-        assertive will immediately announce updates */}
-      <p className=" text-red-600" aria-live="assertive">
-        {error}
-      </p>
       <h1
         className="flex justify-center text-blue-700
     underline decoration-blue-700 underline-offset-4 font-bold
@@ -27,13 +22,25 @@ export default function CustomForm({
         {formTitle}
       </h1>
 
+      {/* aria-live monitors element for changes, and reads aloud as a screen reader,
+        assertive will immediately announce updates */}
+      <p className=" text-red-600" aria-live="assertive">
+        {error}
+      </p>
+
       {formLabelAndInputFields.map((field) => (
         <div className=" space-x-5 " key={field.name}>
           <label key={field.name} htmlFor={field.name}>
             {field.label}
           </label>
+
+          {/* conditionally render label type to apply different styles to different labels */}
           <input
-            className=" border border-blue-500 rounded-md"
+            className={`rounded-lg px-2 border text-black ${
+              field.label === "Email:" && formInvalid
+                ? "border-red-600 focus:border-red-600 focus:outline-red-600"
+                : "border-blue-700 bg-blue-400"
+            }`}
             ref={field.ref}
             type={field.type}
             id={field.name}
