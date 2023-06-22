@@ -24,6 +24,7 @@ const Login = () => {
   // Back End Email validation with Success and Error messages receivied from server validator
   const handleLoginBE = async (event) => {
     event.preventDefault();
+
     try {
       const response = await onLogin(loginData);
       if (response) {
@@ -41,15 +42,20 @@ const Login = () => {
   };
 
   const handleLoginFE = async (event) => {
+    event.preventDefault();
     try {
       if (!emailIsValid(loginData.email)) {
-        setEmailErrorMessage("Please use a valid email address. (Client Side Validation)");
+        setEmailErrorMessage(
+          "Please use a valid email address. (Client Side Validation)"
+        );
         setTimeout(() => {
           setEmailErrorMessage("");
         }, 1000);
         return;
       } else {
-        setEmailSuccessMessage("Email address is valid. (Client Side Validation)");
+        setEmailSuccessMessage(
+          "Email address is valid. (Client Side Validation)"
+        );
         setTimeout(() => {
           setEmailSuccessMessage("");
         }, 1000);
@@ -60,14 +66,15 @@ const Login = () => {
   };
 
   return (
-    <div className="container-fluid mt-5">
+    <div data-testid="login-component" className="container-fluid mt-5">
       <div className="container d-flex flex-column align-items-center mt-5">
         <h3 className="text-center">Login Page</h3>
         <div className="mt-5">
-          <Form>
+          <Form data-testid="login-form">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
+                data-testid="email-input-field"
                 name="email"
                 placeholder="Enter email"
                 value={loginData.email}
@@ -84,6 +91,7 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
+              data-testid="password-input-field"
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -93,12 +101,22 @@ const Login = () => {
             </Form.Group>
             <div className="d-flex justify-content-between">
               {!emailErrorMessage && !emailSuccessMessage && (
-                <Button variant="primary" type="submit" onClick={handleLoginBE}>
+                <Button
+                  data-testid="login-button-be"
+                  variant="primary"
+                  type="submit"
+                  onClick={handleLoginBE}
+                >
                   Login BE
                 </Button>
               )}
               {!emailErrorMessage && !emailSuccessMessage && (
-                <Button variant="primary" type="submit" onClick={handleLoginFE}>
+                <Button
+                  data-testid="login-button-fe"
+                  variant="primary"
+                  type="submit"
+                  onClick={handleLoginFE}
+                >
                   Login FE
                 </Button>
               )}
@@ -109,6 +127,7 @@ const Login = () => {
                 <p
                   className="alert alert-danger"
                   style={{ width: "200px", textAlign: "center" }}
+                  data-testid="email-error-message"
                 >
                   {emailErrorMessage}
                 </p>
@@ -117,6 +136,7 @@ const Login = () => {
                 <p
                   className="alert alert-success"
                   style={{ width: "200px", textAlign: "center" }}
+                  data-testid="email-success-message"
                 >
                   {emailSuccessMessage}
                 </p>
