@@ -8,8 +8,8 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorEmail, setErrorEmail] = useState(false);
-    const handleSubmit = () =>{
-
+    const handleSubmit = (e) =>{
+        e.preventDefault()
     }
 
   return (
@@ -20,13 +20,18 @@ const Login = () => {
             justifyContent:"center",
             alignItems:"center"
         }}>
-        <Form>
+        <Form onSubmit={(e)=>{
+            handleSubmit(e)
+        }}>
             <Form.Group  className="mb-3" controlId="formPlaintextEmail">
                 <Form.Label column sm="2">
                 Email
                 </Form.Label>
                 
-                <Form.Control isInvalid={errorEmail}  defaultValue="email@example.com" />
+                <Form.Control onChange={(e)=>{
+                    setEmail(e.target.value);
+                    setErrorEmail(false);
+                }} isInvalid={errorEmail}  defaultValue="email@example.com" />
                
             </Form.Group>
 
@@ -35,7 +40,7 @@ const Login = () => {
                 Password
                 </Form.Label>
             
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
                 
             </Form.Group>
         <Button>Submit</Button>
