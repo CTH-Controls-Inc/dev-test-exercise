@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const index =()=>{
+const Index =()=>{
 
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
@@ -70,4 +70,4 @@ return <>
 
 }
 
-export default index;
+export default Index;
