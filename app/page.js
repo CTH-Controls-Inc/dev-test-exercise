@@ -2,8 +2,9 @@
 import { useState } from "react";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -25,14 +26,16 @@ const LoginPage = () => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (!validateEmail()) {
+      setEmailError(true);
       alert("Invalid Email");
     } else {
+      setEmailError(false);
       alert("Log In Successful");
     }
   };
 
   return (
-    <div>
+    <div className="center-container">
       <form className="form-input" onSubmit={(e) => onFormSubmit(e)}>
           <input 
               type="text" 
@@ -40,6 +43,7 @@ const LoginPage = () => {
               required
               value={email}
               onChange={handleEmailChange}
+              style={{ borderColor: emailError ? 'red' : '' }}
           />
           <input
               type="text" 
