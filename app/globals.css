@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+:root {
+  --primary-color: #D0D0D0;
+  --button-color: grey;
+}
+
+* {
+  margin: 0;
+  font-family: "Raleway";
+}
+
+h1 {
+  text-transform: uppercase;
+  text-shadow: 0px 1px, 1px 0px, 1px 1px black;
+  letter-spacing:1.2px;
+  padding: 10px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px 10px 10px;
+  top: 0;
+}
+.form-input input {
+  flex: auto;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  padding: 10px;
+  font-size: large;
+}
+.form-input input:focus {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.login-btn {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px 10px 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 50px;
+  padding: 10px;
+  border-radius: 100%; 
+  color: var(--button-color);
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.login-btn:hover {
+  color:black;
+}
+.login-btn:active {
+  color:black;
+}
+
+.basic-btn {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px 10px 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 100%; 
+  color: var(--button-color);
+  cursor: pointer;
+}
+.basic-btn:hover {
+  color:black;
+}
+.basic-btn:active {
+  color:black;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For desktop: */
+  .profile-container {
+    flex-direction: column;
+    font-size: small;
+  }
+
+  .form-input input{
+    font-size: small;
+  }
+}
