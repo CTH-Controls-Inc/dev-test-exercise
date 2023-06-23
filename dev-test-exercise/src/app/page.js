@@ -14,6 +14,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import emailValidator from 'email-validator';
 
 
 
@@ -21,6 +22,18 @@ const LoginPage = () => {
 
     const [email, setEmail] = useState('');
     const [isValidEmail, setIsValidEmail] = useState(true);
+
+    const handleEmailChange = (event) => {
+        const enteredEmail = event.target.value;
+        setEmail(enteredEmail);
+        // valid email
+        const isValid = emailValidator.validate(enteredEmail);
+        setIsValidEmail(isValid);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    };
 
     //set mui login theme
     const defaultTheme = createTheme();
@@ -43,7 +56,7 @@ const LoginPage = () => {
                   <Typography component="h1" variant="h5">
                       Sign in
                   </Typography>
-                  <Box component="form"  noValidate sx={{mt: 1}}>
+                  <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
                       <TextField
                           margin="normal"
                           required
@@ -52,9 +65,10 @@ const LoginPage = () => {
                           label="Email Address"
                           name="email"
                           autoComplete="email"
-
-
-
+                          onChange={handleEmailChange}
+                          value={email}
+                          error={ !isValidEmail }
+                          helperText= { !isValidEmail ? "Please enter a valid email address" : ""}
                           autoFocus
                       />
                       <TextField
