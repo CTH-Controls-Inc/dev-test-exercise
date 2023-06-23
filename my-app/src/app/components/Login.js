@@ -8,8 +8,35 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorEmail, setErrorEmail] = useState(false);
+
+    const validateEmail = (emailSubmited) =>{
+        if(!email){
+            setErrorEmail(true);
+        }
+        let regex = /^(\w+|-)([\.-]?\w+)@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(regex.test(email.toLowerCase())=== false){
+            setErrorEmail(true);
+          
+        }
+
+    }
+
     const handleSubmit = (e) =>{
         e.preventDefault()
+        let submit = true
+        if(!email){
+            submit = false
+        }
+        let regex = /^(\w+|-)([\.-]?\w+)@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(regex.test(email.toLowerCase())=== false){
+            setErrorEmail(true);
+            submit = true
+        }
+
+        if(submit){
+            console.log("submit successfull")
+        }
+
     }
 
   return (
@@ -28,10 +55,12 @@ const Login = () => {
                 Email
                 </Form.Label>
                 
-                <Form.Control onChange={(e)=>{
+                <Form.Control 
+                onBlur={(e)=>validateEmail(e.target.value)}
+                onChange={(e)=>{
                     setEmail(e.target.value);
                     setErrorEmail(false);
-                }} isInvalid={errorEmail}  defaultValue="email@example.com" />
+                }} isInvalid={errorEmail}  placeholder="Enter Email" />
                
             </Form.Group>
 
