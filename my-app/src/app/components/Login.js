@@ -65,7 +65,7 @@ const Login = () => {
               isInvalid={errorEmail}
               placeholder="Enter Email"
             />
-            <span style={{color:"red"}}> <AiOutlineExclamationCircle size={20} style={{verticalAlign:"bottom", paddingBottom:"2px"}}/>Invalid Email, please enter proper address</span>
+         {errorEmail && <span style={{color:"red"}}> <AiOutlineExclamationCircle size={20} style={{verticalAlign:"bottom", paddingBottom:"2px"}}/>Invalid Email, please enter proper address</span>}
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formPlaintextPassword">
