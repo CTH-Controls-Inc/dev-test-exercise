@@ -1,38 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dev Test
 
-## Getting Started
+## Installation
 
-First, run the development server:
+To run this project locally, follow these steps:
+1. Navigate to the project directory:
+cd login-page
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+2. Install dependencies using npm:
+npm install
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
+To start the application, run the following command:
+npm start
+This command will start the application and make it accessible at http://localhost:3000.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Docker
+Additionally, you can choose to run the application using Docker. Make sure you have Docker installed and running on your system.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Build the Docker image:
+docker build -t login-page .
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Run the Docker container:
+docker run -d -p 3000:3000 login-page
+The application will be accessible at http://localhost:3000 when running inside the Docker container.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Exercise
 
-## Learn More
+Create a basic web application using next.js + React to display a login page. The login page should include fields for email and password. The page doesn't need to have actual functionality, but it should have the following feature:
 
-To learn more about Next.js, take a look at the following resources:
+- When the user enters a value that is not a valid email address in the email field, the box should have a red border and display a notification informing the user that the entered value is not a valid email.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You have the freedom to choose any component library you prefer.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Additionally, please include a Dockerfile that enables us to run the next application easily by running the Docker container.
